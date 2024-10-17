@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>ru.prusakova</groupId>
+  <artifactId>logging-starter</artifactId>
+  <versioning>
+    <lastUpdated>20241017174148</lastUpdated>
+    <snapshot>
+      <timestamp>20241017.174148</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-20241017.174148-1</value>
+        <updated>20241017174148</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>module</extension>
+        <value>1.0-20241017.174148-1</value>
+        <updated>20241017174148</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0-20241017.174148-1</value>
+        <updated>20241017174148</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>1.0-SNAPSHOT</version>
+</metadata>
