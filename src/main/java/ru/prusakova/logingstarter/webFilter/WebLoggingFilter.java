@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.ContentCachingResponseWrapper;
+import ru.prusakova.logingstarter.utils.Util;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -26,7 +27,7 @@ public class WebLoggingFilter extends HttpFilter {
     @Override
     protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
         String method = request.getMethod();
-        String requestURI = request.getRequestURI() + formatQueryString(request);
+        String requestURI = request.getRequestURI() + Util.formatQueryString(request);
         String headers = inlineHeaders(request);
 
         log.info("Запрос: {} {} {}", method, requestURI, headers);
@@ -56,11 +57,5 @@ public class WebLoggingFilter extends HttpFilter {
                 })
                 .collect(Collectors.joining(","));
         return "headers={" + inlineHeaders + "}";
-    }
-
-    private String formatQueryString(HttpServletRequest request) {
-        return Optional.ofNullable(request.getQueryString())
-                .map(qs -> "?" + qs)
-                .orElse(Strings.EMPTY);
     }
 }
