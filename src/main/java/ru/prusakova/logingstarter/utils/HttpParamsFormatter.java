@@ -5,7 +5,7 @@ import org.apache.logging.log4j.util.Strings;
 
 import java.util.Optional;
 
-public class Util {
+public class HttpParamsFormatter {
 
     public static String formatQueryString(HttpServletRequest request) {
         return Optional.ofNullable(request.getQueryString())

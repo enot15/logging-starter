@@ -9,7 +9,7 @@ import org.springframework.http.HttpInputMessage;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.RequestBodyAdviceAdapter;
-import ru.prusakova.logingstarter.utils.Util;
+import ru.prusakova.logingstarter.utils.HttpParamsFormatter;
 
 import java.lang.reflect.Type;
 
@@ -24,7 +24,7 @@ public class WebLoggingRequestBodyAdvice extends RequestBodyAdviceAdapter {
     @Override
     public Object afterBodyRead(Object body, HttpInputMessage inputMessage, MethodParameter parameter, Type targetType, Class<? extends HttpMessageConverter<?>> converterType) {
         String method = request.getMethod();
-        String requestURI = request.getRequestURI() + Util.formatQueryString(request);
+        String requestURI = request.getRequestURI() + HttpParamsFormatter.formatQueryString(request);
 
         log.info("Тело запроса: {} {} {}", method, requestURI, body);
 
