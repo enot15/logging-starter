@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'ru.prusakova'
-version = '1.2-SNAPSHOT'
+version = '1.3-SNAPSHOT'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -20,6 +20,8 @@ def springVersion = '3.2.5'
 dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web:${springVersion}"
     implementation "org.springframework.boot:spring-boot-starter-aop:${springVersion}"
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:4.1.4'
 }
 
 publishing {
